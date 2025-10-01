@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --nav-panel-height: 3rem;
+    --button-height: 2.5rem;
+
+    --application-background: rgb(245, 245, 245);
+    --nav-panel-background: green;
+    --button-hover-background: #D8D8D8;
+    --button-nav-hover-background: #006D00;
+    --button-active-background: #BFBFBF;
+    --button-nav-active-background: #006600;
+    --new-game-button-background: #0066FF;
+    --new-game-button-hover-background: #005BE5;
+    --new-game-button-active-background: #0051CC;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+#gms {
+    background-color: var(--application-background);
+    position: absolute;
+    inset: 0 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: var(--nav-panel-height) 1fr;
+}
+
+#nav-panel {
+    background-color: var(--nav-panel-background);
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 0 10px black;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    gap: 5px;
+}
+
+#application {
+    display: grid;
+    grid-template-rows: 3rem 3rem 1fr;
+    padding: 10px;
+}
+
+.header {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+#filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.games-box {
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 420px);
+    grid-template-rows: repeat(auto-fit, 120px);
+    gap: 25px;
+    overflow-y: auto;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+/***** GAME CARD *****/
+.game-card {
+    background-color: white;
+    box-shadow: 0 0 2px black;
+    height: 120px;
+    width: 420px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    border-radius: 10px;
+}
+
+.game-card img {
+    height: 120px;
+    width: 120px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.game-info {
+    display: grid;
+    grid-template-rows: repeat(3, 33.33%);
+    padding: 0 7px;
+}
+
+.game-info > * {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.game-info > :nth-child(2) {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.game-info > :nth-child(2) > * {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.game-info progress {
+    width: 80%;
+    border-radius: 10px;
+    height: 8px;
+    margin-top: 2px;
+}
+
+.game-info progress::-webkit-progress-bar {
+    background-color: lightgray;
+    border-radius: 8px;
+}
+
+.game-info progress::-webkit-progress-value {
+    border-radius: 8px;
+}
+
+.status-icon {
+    background-color: lightgray;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 10000px;
+}
+
+/***** BUTTONS *****/
+button {
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .1s linear;
+    padding: 5px 10px;
+}
+
+button.circle {
+    padding: 0;
+    height: var(--button-height);
+    width: var(--button-height);
+    border-radius: 10000px;
+}
+
+button:hover {
+    background-color: var(--button-hover-background);
+}
+
+button:active {
+    background-color: var(--button-active-background);
+}
+
+#nav-panel button {
+    color: white !important;
+    font-size: 1.8rem !important;
+}
+
+#nav-panel button:hover {
+    background-color: var(--button-nav-hover-background);
+}
+
+#nav-panel button:active {
+    background-color: var(--button-nav-active-background);
+}
+
+#add-game-button {
+    background-color: var(--new-game-button-background);
+    color: white;
+}
+
+#add-game-button:hover {
+    background-color: var(--new-game-button-hover-background);
+}
+
+#add-game-button:active {
+    background-color: var(--new-game-button-active-background);
+}
+
+/***** INPUTS *****/
+input {
+    padding: 3px 5px;
+}
+
+select {
+    appearance: base-select;
+    border-radius: 0;
+    margin-bottom: 2.5px;
+}
+
+input, select {
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+    background: none;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none; 
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    height: 1.3rem;
+    width: 1.3rem;
+    border: 2px solid #b3194f;
+    border-radius: 5px;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #b3194f;
+    background-image: url('../img/checkmark.png');
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+label {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/***** COLORS *****/
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.dark-red {
+    background-color: darkred;
+}
+
+/***** SIZES *****/
+.width150 {
+    min-width: 150px;
+}
+
+.width350 {
+    min-width: 350px;
+}
