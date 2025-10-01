@@ -1,0 +1,69 @@
+{
+    "platform": {
+        "P001": "PC",
+        "P002": "PlayStation",
+        "P003": "PlayStation 2",
+        "P004": "PlayStation 3",
+        "P005": "PlayStation 4",
+        "P006": "PlayStation 5",
+        "P007": "PlayStation Portable",
+        "P008": "PlayStation Vita",
+        "P009": "Xbox",
+        "P010": "Xbox 360",
+        "P011": "Xbox One",
+        "P012": "Xbox Series X|S",
+        "P013": "NES",
+        "P014": "SNES",
+        "P015": "Virtual Boy",
+        "P016": "Nintendo 64",
+        "P017": "Nintendo GameCube",
+        "P018": "Nintendo Wii",
+        "P019": "Nintendo Wii U",
+        "P020": "Game Boy",
+        "P021": "Game Boy Color",
+        "P022": "Game Boy Advance",
+        "P023": "Nintendo DS",
+        "P024": "Nintendo 3DS",
+        "P025": "Nintendo Switch",
+        "P026": "Nintendo Switch 2"
+    },
+    "library": {
+        "L000": "---",
+        "L001": "Steam",
+        "L002": "Epic Games",
+        "L003": "Ubisoft Connect",
+        "L004": "EA Desktop",
+        "L005": "Rockstar Launcher",
+        "L006": "Microsoft Store",
+        "L007": "Battle.net",
+        "L008": "GOG Galaxy",
+        "L009": "Meta Store",
+        "L010": "Nintendo E-Shop",
+        "L011": "PlayStation Store"
+    },
+    "status": {
+        "S001": "Other",
+        "S002": "Waiting",
+        "S003": "In Progress",
+        "S004": "Won",
+        "S005": "Abandoned",
+        "S006": "Out of Backlog"
+    },
+    "status_color": {
+        "S001": "",
+        "S002": "red",
+        "S003": "yellow",
+        "S004": "green",
+        "S005": "darkred",
+        "S006": "purple"
+    },
+    "region": {
+        "R001": "PAL",
+        "R002": "NTSC-US",
+        "R003": "NTSC-J",
+        "R004": "PAL-A",
+        "R005": "PAL-B",
+        "R006": "Worldwide",
+        "R007": "China"
+    }
+}
