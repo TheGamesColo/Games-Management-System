@@ -108,6 +108,12 @@ html {
     display: grid;
     grid-template-columns: var(--game-card-height) 1fr;
     border-radius: 10px;
+    transition: box-shadow .1s linear;
+}
+
+.game-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 3px black;
 }
 
 .game-card img {
