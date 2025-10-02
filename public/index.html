@@ -4,7 +4,8 @@
         <title>Games Management System</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/styles.css" />
+        <script src="js/common.js" defer></script>
     </head>
     <body>
         <div id="gms">
@@ -26,40 +27,17 @@
                 <div id="filter-bar">
                     <input class="width350" type="search" placeholder="🔎 Search...">
                     <select class="width150" data="platform">
-                        <option selected hidden>Platform</option>
+                        <option value="" selected hidden>Platform</option>
                     </select>
                     <select class="width150" data="library">
-                        <option selected hidden>Library</option>
+                        <option value="" selected hidden>Library</option>
                     </select>
                     <select class="width150" data="status">
-                        <option selected hidden>Status</option>
+                        <option value="" selected hidden>Status</option>
                     </select>
-                    <label><input type="checkbox" checked> Physical</label>
+                    <label><input type="checkbox" value="1" data="is_physical"> Physical</label>
                 </div>
-                <div class="games-box">
-
-                    <div class="game-card">
-                        <img src="img/placeholder.png" />
-                        <div class="game-info">
-                            <div>Rayman 2: The Great Escape</div>
-                            <div>
-                                <div>
-                                    <span class="status-icon"></span>
-                                    <span>Completed</span>
-                                </div>
-                                <div>
-                                    <span class="material-symbols-outlined">trophy</span>
-                                    <span>50%</span>
-                                </div>
-                            </div>
-                            <div>
-                                <progress min="0" max="100" value="70"></progress>
-                                <span>70%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+                <div id="games-box"></div>
             </div>
         </div>
     </body>
