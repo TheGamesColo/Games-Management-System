@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     --nav-panel-height: 3rem;
@@ -26,7 +26,7 @@
 
 html {
     font-size: 16px;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -109,6 +109,7 @@ html {
     grid-template-columns: var(--game-card-height) 1fr;
     border-radius: 10px;
     transition: box-shadow .1s linear;
+    cursor: default;
 }
 
 .game-card:hover {
@@ -130,9 +131,13 @@ html {
 }
 
 .game-info > * {
+    max-width: calc(var(--game-card-width) - var(--game-card-height));
     display: flex;
     align-items: center;
     gap: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .game-info > :nth-child(2) {
@@ -236,7 +241,7 @@ select {
 
 input, select {
     font-size: 1.1rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: none;
     border: none;
     border-bottom: 1px solid var(--input-border-color);
