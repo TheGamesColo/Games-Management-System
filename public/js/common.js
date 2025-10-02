@@ -68,7 +68,7 @@ async function loadGameCards(data) {
         gameCard.innerHTML = `
         <img src="${imgCover}" />
         <div class="game-info">
-            <div>${item.title}</div>
+            <div title="${item.title}">${item.title}</div>
             <div>
                 <div>
                     <span class="status-icon ${selectData["status_color"][item.status]}"></span>
