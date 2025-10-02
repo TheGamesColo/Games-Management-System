@@ -1,0 +1,14 @@
+:root {
+    --new-game-button-background: #3B3D3D;
+    --new-game-button-hover-background: #4E5051;
+    --new-game-button-active-background: #595b5c;
+    --application-background: #1C1C1D;
+    --nav-panel-background: #252728;
+    --button-nav-hover-background: #3B3D3D;
+    --button-nav-active-background: #4E5051;
+    --game-card-background: #252728;
+}
+
+* {
+    color: white;
+}
