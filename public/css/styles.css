@@ -3,6 +3,9 @@
 :root {
     --nav-panel-height: 3rem;
     --button-height: 2.5rem;
+    --game-card-height: 120px;
+    --game-card-width: 420px;
+    --scrollbar-width: 10px;
 
     --application-background: rgb(245, 245, 245);
     --nav-panel-background: green;
@@ -13,6 +16,12 @@
     --new-game-button-background: #0066FF;
     --new-game-button-hover-background: #005BE5;
     --new-game-button-active-background: #0051CC;
+    --game-card-background: white;
+    --progress-bar-background: lightgray;
+    --checkbox-color: #B3194F;
+    --input-border-color: gray;
+    --scrollbar-background: white;
+    --scrollbar-thumb-background: #c3cdd4;
 }
 
 html {
@@ -20,6 +29,18 @@ html {
     font-family: 'Lato', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+    background-color: var(--scrollbar-background);
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-background);
+    border-radius: 100px;
+}
+
+/***** MAIN SECTIONS *****/
 #gms {
     background-color: var(--application-background);
     position: absolute;
@@ -28,6 +49,8 @@ html {
     height: 100vh;
     display: grid;
     grid-template-rows: var(--nav-panel-height) 1fr;
+    gap: 0px;
+    overflow: hidden;
 }
 
 #nav-panel {
@@ -39,14 +62,14 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5px;
+    padding: 0 10px;
     gap: 5px;
 }
 
 #application {
+    height: calc(100vh - var(--nav-panel-height));
     display: grid;
-    grid-template-rows: 3rem 3rem 1fr;
-    padding: 10px;
+    grid-template-rows: 4rem 3rem 1fr;
 }
 
 .header {
@@ -54,41 +77,42 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 5px;
+    padding: 0 15px;
 }
 
 #filter-bar {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding: 0 15px;
 }
 
-.games-box {
-    padding: 5px;
+#games-box {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 420px);
-    grid-template-rows: repeat(auto-fit, 120px);
+    grid-template-columns: repeat(auto-fit, var(--game-card-width));
+    grid-template-rows: repeat(auto-fit, var(--game-card-height));
     gap: 25px;
     overflow-y: auto;
     width: 100%;
     box-sizing: border-box;
     justify-content: center;
+    padding: 10px;
 }
 
 /***** GAME CARD *****/
 .game-card {
-    background-color: white;
+    background-color: var(--game-card-background);
     box-shadow: 0 0 2px black;
-    height: 120px;
-    width: 420px;
+    height: var(--game-card-height);
+    width: var(--game-card-width);
     display: grid;
-    grid-template-columns: 120px 1fr;
+    grid-template-columns: var(--game-card-height) 1fr;
     border-radius: 10px;
 }
 
 .game-card img {
-    height: 120px;
-    width: 120px;
+    height: var(--game-card-height);
+    width: var(--game-card-height);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -124,7 +148,7 @@ html {
 }
 
 .game-info progress::-webkit-progress-bar {
-    background-color: lightgray;
+    background-color: var(--progress-bar-background);
     border-radius: 8px;
 }
 
@@ -209,7 +233,7 @@ input, select {
     font-family: 'Lato', sans-serif;
     background: none;
     border: none;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid var(--input-border-color);
     outline: none; 
 }
 
@@ -217,12 +241,12 @@ input[type="checkbox"] {
     appearance: none;
     height: 1.3rem;
     width: 1.3rem;
-    border: 2px solid #b3194f;
+    border: 2px solid var(--checkbox-color);
     border-radius: 5px;
 }
 
 input[type="checkbox"]:checked {
-    background-color: #b3194f;
+    background-color: var(--checkbox-color);
     background-image: url('../img/checkmark.png');
     background-position: center;
     background-repeat: no-repeat;
