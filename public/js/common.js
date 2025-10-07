@@ -1,9 +1,11 @@
 let gamesData;
 let selectData;
+const gms = document.getElementById('gms');
 const gamesBox = document.getElementById('games-box');
 const filterBar = document.getElementById('filter-bar');
 const selectList = document.getElementsByTagName('select');
 const themeButton = document.getElementById('theme-button');
+const addGameButton = document.getElementById('add-game-button');
 
 const darkCSS = document.createElement('link');
 darkCSS.rel = 'stylesheet';
@@ -12,7 +14,7 @@ darkCSS.href = '/css/styles_dark.css';
 if (getCookie('theme') == undefined) setCookie('theme', 'light', 365);
 if (getCookie('theme') == 'dark') {
     document.head.appendChild(darkCSS);
-    themeButton.innerText = 'light_mode';
+    if (themeButton != null) themeButton.innerText = 'light_mode';
 }
 
 init();
@@ -25,6 +27,10 @@ if (filterBar != null) {
 
 if (themeButton != null) {
     themeButton.addEventListener('click', () => changeTheme());
+}
+
+if (addGameButton != null) {
+    addGameButton.addEventListener('click', () => showFormFrame('new'));
 }
 
 
@@ -51,14 +57,30 @@ async function init() {
     }
 }
 
+function showFormFrame(gameId) {
+    const curtain = document.createElement('div');
+    const frame = document.createElement('iframe');
+    curtain.id = 'curtain';
+    frame.id = 'frame';
+    frame.src = window.location.href + 'edit_game.html' + `?id=${gameId}`;
+    curtain.appendChild(frame);
+    gms.appendChild(curtain);
+}
+
 /**
  * Creates game cards and fills gamesBox with them.
  * @param {JSON} data - Games data stored in JSON format.
  */
 async function loadGameCards(data) {
     for (const item of data) {
-        let imgCover = new Blob([new Uint8Array(item.img_cover.data)], {type: "image/png"});
-        imgCover = imgCover.size == 0 ? "img/placeholder.png" : URL.createObjectURL(imgCover);
+
+        let imgCover;
+        if (item.img_cover && item.img_cover.data) {
+            imgCover = new Blob([new Uint8Array(item.img_cover.data)], {type: "image/png"});
+            imgCover = URL.createObjectURL(imgCover);
+        } else {
+            imgCover = "img/placeholder.png";
+        } 
 
         let achievsPercent = Math.round((item.achievs_completed/item.achievs_all)*100);
         if (isNaN(achievsPercent)) { achievsPercent = '---'; }
