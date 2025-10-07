@@ -9,6 +9,10 @@
     --game-card-background: #252728;
 }
 
-* {
+*:not(option) {
     color: white;
+}
+
+.info-section > :nth-child(2) > :nth-child(2) textarea {
+    background-color: var(--application-background);
 }
