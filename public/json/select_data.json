@@ -54,7 +54,7 @@
         "S002": "red",
         "S003": "yellow",
         "S004": "green",
-        "S005": "darkred",
+        "S005": "dark-red",
         "S006": "purple"
     },
     "region": {
